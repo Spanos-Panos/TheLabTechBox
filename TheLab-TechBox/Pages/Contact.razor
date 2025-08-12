@@ -1,0 +1,346 @@
+@page "/contact"
+@namespace TheLab_TechBox.Pages
+
+<PageTitle>Contact - The Lab Techbox</PageTitle>
+
+<!-- Contact Page Content -->
+<section class="py-8 min-h-screen" style="background-color: #008250;">
+    <div class="container mx-auto px-4">
+        
+        <!-- Top Contact Info Box with Image -->
+        <div class="max-w-6xl mx-auto bg-white rounded-2xl shadow-lg p-8 mb-8">
+            <div class="flex flex-col lg:flex-row items-center gap-8">
+                
+                <!-- Left Side - Contact Info -->
+                <div class="lg:w-1/2">
+                    <h1 class="text-3xl font-bold text-gray-800 mb-6">ΕΠΙΚΟΙΝΩΝΗΣΤΕ ΜΑΖΙ ΜΑΣ</h1>
+                    
+                    <div class="space-y-4 text-lg text-gray-700">
+                        <div class="flex items-start">
+                            <span class="text-2xl mr-3">📍</span>
+                            <span data-address class="hover:text-blue-600 transition-colors">KALIVA MPAKOGIANNI 17, LAMIA 351 00</span>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <span class="text-2xl mr-3">✉️</span>
+                            <a href="mailto:thelabtechbox@gmail.com" class="text-blue-600 hover:text-blue-700 transition-colors">
+                                thelabtechbox@gmail.com
+                            </a>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <span class="text-2xl mr-3">📞</span>
+                            <div>
+                                <a href="tel:2231044850" class="text-blue-600 hover:text-blue-700 transition-colors">2231044850</a>
+                                <span class="text-gray-500">, </span>
+                                <a href="tel:6977060519" class="text-blue-600 hover:text-blue-700 transition-colors">6977060519</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Side - Contact Image -->
+                <div class="lg:w-1/2">
+                    <div class="h-80 bg-gradient-to-br from-blue-400 to-blue-600 rounded-lg flex items-center justify-center overflow-hidden">
+                        <img src="/contactImage.avif" alt="Contact Us" class="w-full h-full object-cover rounded-lg" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Two Column Section - Contact Form and Map on Same Line -->
+        <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+            
+            <!-- Left Box - Contact Form -->
+            <div class="bg-white rounded-2xl shadow-lg p-8">
+                <h3 class="text-xl font-semibold text-gray-800 mb-6">
+                    Στείλτε μας το μήνυμά σας και θα επικοινωνήσουμε μαζί σας το συντομότερο δυνατόν
+                </h3>
+                
+                <form class="space-y-6" onsubmit="return handleContactForm(event)">
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                        <input type="email" id="email" name="email" required
+                               placeholder="π.χ. someone@email.com"
+                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                    </div>
+                    
+                    <div>
+                        <label for="subject" class="block text-sm font-medium text-gray-700 mb-2">Θέμα</label>
+                        <input type="text" id="subject" name="subject" required
+                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                    </div>
+                    
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Το μήνυμά σας</label>
+                        <textarea id="message" name="message" rows="5" required
+                                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all resize-vertical"></textarea>
+                    </div>
+                    
+                    <button type="submit"
+                            class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 shadow-lg">
+                        Αποστολή
+                    </button>
+                </form>
+            </div>
+
+            <!-- Right Box - Enhanced Google Maps -->
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+                <div class="h-full min-h-[520px] relative">
+                    <!-- Map Header - Redesigned -->
+                    <div class="absolute top-0 left-0 right-0 bg-gradient-to-r from-blue-600 to-blue-700 z-20 p-4 text-white">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <h4 class="text-lg font-bold mb-1 flex items-center">
+                                    <span class="text-2xl mr-2">📍</span>
+                                    THE LAB TECHBOX
+                                </h4>
+                                <p class="text-sm text-blue-100">Kaliva Mpakogianni 17, Lamia 351 00</p>
+                            </div>
+                            <div class="flex gap-2">
+                                <button onclick="openInGoogleMaps()" 
+                                       class="bg-white text-blue-600 px-3 py-1 rounded-full text-xs font-semibold hover:bg-blue-50 transition-all transform hover:scale-105">
+                                    Google Maps
+                                </button>
+                                <button onclick="getDirections()" 
+                                       class="bg-green-500 text-white px-3 py-1 rounded-full text-xs font-semibold hover:bg-green-600 transition-all transform hover:scale-105">
+                                    Directions
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Clean Google Maps Embed -->
+                    <div class="relative h-full" style="padding-top: 80px;">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1528.1!2d22.4256394!3d38.9001234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a6991c4f5f1e7f%3A0x5f8e8f0b1c2d3e4f!2sKaliva%20Mpakogianni%2017%2C%20Lamia%20351%2000%2C%20Greece!5e0!3m2!1sen!2sgr!4v1700000000000!5m2!1sen!2sgr&zoom=17&center=38.9001234,22.4256394&markers=color:red%7Clabel:T%7C38.9001234,22.4256394&gestureHandling=cooperative&controls=1&scrollwheel=1"
+                            width="100%" 
+                            height="440"
+                            style="border:0; border-radius: 0 0 1rem 1rem;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="THE LAB TECHBOX Location - Kaliva Mpakogianni 17, Lamia">
+                        </iframe>
+                    </div>
+                    
+                    <!-- Address and Map Links - Under the Map -->
+                    <div class="bg-gray-50 rounded-b-2xl p-4 border-t border-gray-200">
+                        <div class="text-center">
+                            <p class="text-gray-700 font-medium mb-1">Kaliva Mpakogianni 17</p>
+                            <p class="text-gray-600 text-sm mb-3">Kaliva Mpakogianni 17, Lamia 351 00</p>
+                            <div class="flex justify-center gap-4">
+                                <button onclick="getDirections()" 
+                                        class="text-blue-600 hover:text-blue-800 text-sm font-medium hover:underline">
+                                    Directions
+                                </button>
+                                <button onclick="openInGoogleMaps()" 
+                                        class="text-blue-600 hover:text-blue-800 text-sm font-medium hover:underline">
+                                    View larger map
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <!-- Bottom Full Width Box - Opening Hours - Vertical Layout -->
+        <div class="max-w-6xl mx-auto bg-white rounded-2xl shadow-lg p-8">
+            <h3 class="text-2xl font-bold text-gray-800 mb-8 text-center">ΩΡΑΡΙΟ ΛΕΙΤΟΥΡΓΙΑΣ</h3>
+            
+            <div class="max-w-md mx-auto space-y-3">
+                <div class="flex justify-between items-center py-3 px-4 border border-gray-200 rounded-lg">
+                    <span class="font-medium text-gray-800">Δευτέρα</span>
+                    <span class="text-gray-600">09:00 - 14:00</span>
+                </div>
+                
+                <div class="flex justify-between items-center py-3 px-4 border border-gray-200 rounded-lg">
+                    <span class="font-medium text-gray-800">Τρίτη</span>
+                    <span class="text-gray-600">09:00 - 14:00 & 17:30 - 21:00</span>
+                </div>
+                
+                <div class="flex justify-between items-center py-3 px-4 border border-gray-200 rounded-lg">
+                    <span class="font-medium text-gray-800">Τετάρτη</span>
+                    <span class="text-gray-600">09:00 - 14:00</span>
+                </div>
+                
+                <div class="flex justify-between items-center py-3 px-4 border border-gray-200 rounded-lg">
+                    <span class="font-medium text-gray-800">Πέμπτη</span>
+                    <span class="text-gray-600">09:00 - 14:00 & 17:30 - 21:00</span>
+                </div>
+                
+                <div class="flex justify-between items-center py-3 px-4 border border-gray-200 rounded-lg">
+                    <span class="font-medium text-gray-800">Παρασκευή</span>
+                    <span class="text-gray-600">09:00 - 14:00 & 17:30 - 21:00</span>
+                </div>
+                
+                <div class="flex justify-between items-center py-3 px-4 border border-gray-200 rounded-lg">
+                    <span class="font-medium text-gray-800">Σάββατο</span>
+                    <span class="text-gray-600">09:00 - 14:00</span>
+                </div>
+                
+                <div class="flex justify-between items-center py-3 px-4 border border-red-200 bg-red-50 rounded-lg">
+                    <span class="font-medium text-red-600">Κυριακή</span>
+                    <span class="text-red-600 font-medium">Κλειστά</span>
+                </div>
+            </div>
+        </div>
+</section>
+
+<script>
+    function handleContactForm(event) {
+        event.preventDefault();
+        
+        // Get form data
+        const formData = new FormData(event.target);
+        const email = formData.get('email');
+        const subject = formData.get('subject');
+        const message = formData.get('message');
+        
+        // Create mailto link
+        const mailtoLink = `mailto:thelabtechbox@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`From: ${email}\n\n${message}`)}`;
+        
+        // Open email client
+        window.location.href = mailtoLink;
+        
+        // Show success message
+        alert('You are being redirected to your email client to send the message.');
+        
+        return false;
+    }
+
+    // Enhanced Google Maps functions with better UX
+
+    function openInGoogleMaps() {
+        window.open('https://maps.app.goo.gl/okzfSFaX6h7ySTZo6', '_blank');
+    }
+
+    function getDirections() {
+        const directionsUrl = 'https://www.google.com/maps/dir/?api=1&destination=Kaliva+Mpakogianni+17,+Lamia+351+00,+Greece';
+        window.open(directionsUrl, '_blank');
+    }
+
+    function centerMap() {
+        const iframe = document.querySelector('iframe');
+        if (iframe) {
+            const newSrc = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1528.1!2d22.4256394!3d38.9001234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a6991c4f5f1e7f%3A0x5f8e8f0b1c2d3e4f!2sKaliva%20Mpakogianni%2017%2C%20Lamia%20351%2000%2C%20Greece!5e0!3m2!1sen!2sgr!4v' + Date.now() + '!5m2!1sen!2sgr&zoom=17&center=38.9001234,22.4256394&markers=color:red%7Clabel:T%7C38.9001234,22.4256394&gestureHandling=cooperative&controls=1&scrollwheel=1';
+            iframe.src = newSrc;
+            showMapFeedback('🎯 Map centered!');
+        }
+    }
+
+    function toggleMapType() {
+        const iframe = document.querySelector('iframe');
+        if (iframe) {
+            const currentSrc = iframe.src;
+            const isRoadmap = currentSrc.includes('roadmap') || !currentSrc.includes('maptype=');
+            const newMapType = isRoadmap ? 'satellite' : 'roadmap';
+            
+            let newSrc = currentSrc.replace(/maptype=\\w+/g, '');
+            newSrc += newSrc.includes('?') ? '&' : '?';
+            newSrc += 'maptype=' + newMapType;
+            
+            iframe.src = newSrc;
+            
+            const typeText = newMapType === 'satellite' ? 'Satellite' : 'Roadmap';
+            showMapFeedback('🗺️ View: ' + typeText);
+        }
+    }
+
+    function shareLocation() {
+        const businessName = 'THE LAB TECHBOX';
+        const locationAddress = 'Kaliva Mpakogianni 17, Lamia 351 00, Greece';
+        const mapsUrl = 'https://www.google.com/maps?q=38.9001234,22.4256394';
+        
+        const shareData = {
+            title: businessName,
+            text: 'Visit us at: ' + locationAddress,
+            url: mapsUrl
+        };
+
+        if (navigator.share) {
+            navigator.share(shareData).catch(err => console.log('Share failed', err));
+        } else {
+            const textToCopy = businessName + '\\n' + locationAddress + '\\n' + mapsUrl;
+            
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(textToCopy).then(() => {
+                    showMapFeedback('📋 Location copied!');
+                });
+            } else {
+                const textArea = document.createElement('textarea');
+                textArea.value = textToCopy;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                showMapFeedback('📋 Location copied!');
+            }
+        }
+    }
+
+    function showMapFeedback(message) {
+        // Create or update feedback element
+        let feedback = document.getElementById('map-feedback');
+        if (!feedback) {
+            feedback = document.createElement('div');
+            feedback.id = 'map-feedback';
+            feedback.className = 'fixed top-20 right-4 bg-green-600 text-white px-4 py-2 rounded-lg shadow-lg z-50 transform translate-x-full transition-transform duration-300';
+            document.body.appendChild(feedback);
+        }
+        
+        feedback.textContent = message;
+        feedback.style.transform = 'translateX(0)';
+        
+        // Hide after 3 seconds
+        setTimeout(() => {
+            feedback.style.transform = 'translateX(100%)';
+        }, 3000);
+    }
+
+    // Copy address to clipboard function
+    function copyAddress() {
+        const address = 'Kaliva Mpakogianni 17, Lamia 351 00';
+        navigator.clipboard.writeText(address).then(function() {
+            // Show temporary success message
+            const button = event.target;
+            const originalText = button.textContent;
+            button.textContent = '✓ Copied!';
+            button.classList.add('bg-green-600');
+            
+            setTimeout(() => {
+                button.textContent = originalText;
+                button.classList.remove('bg-green-600');
+            }, 2000);
+        }).catch(function(err) {
+            console.error('Error copying address: ', err);
+            alert('Unable to copy address');
+        });
+    }
+
+    // Enhanced iframe load handling and address copying
+    document.addEventListener('DOMContentLoaded', function() {
+        // Add click handler to address for easy copying
+        const addressElements = document.querySelectorAll('[data-address]');
+        addressElements.forEach(element => {
+            element.addEventListener('click', copyAddress);
+            element.style.cursor = 'pointer';
+            element.title = 'Click to copy address';
+        });
+
+        // Enhanced iframe load handling
+        const iframe = document.querySelector('iframe');
+        if (iframe) {
+            iframe.addEventListener('load', function() {
+                console.log('Google Maps loaded successfully');
+            });
+            
+            iframe.addEventListener('error', function() {
+                console.warn('Google Maps failed to load');
+                showMapFeedback('⚠️ Map loading error');
+            });
+        }
+    });
+</script>

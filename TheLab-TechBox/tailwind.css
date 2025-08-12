@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  /* Photo gallery animations */
+  .photo-slide {
+    opacity: 0;
+    transform: translateX(100%);
+    transition: all 0.5s ease-in-out;
+  }
+  
+  .photo-slide.active {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  /* Service card animations */
+  .service-card {
+    transition: all 0.3s ease;
+  }
+  
+  .service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Tech-themed animations */
+  .tech-glow {
+    box-shadow: 0 0 20px rgba(14, 165, 233, 0.3);
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .tech-glow:hover {
+    box-shadow: 0 0 30px rgba(14, 165, 233, 0.5);
+  }
+  
+  /* Payment modal blur */
+  .modal-blur {
+    backdrop-filter: blur(8px);
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes bounceIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes photoTransition {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}

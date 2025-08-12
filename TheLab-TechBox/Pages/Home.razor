@@ -1,0 +1,419 @@
+﻿@page "/"
+@namespace TheLab_TechBox.Pages
+@implements IDisposable
+@inject IJSRuntime JSRuntime
+
+<PageTitle>The Lab Techbox - Επισκευές Ηλεκτρονικών & Συστήματα Ασφαλείας</PageTitle>
+
+<!-- New Hero Section with Gallery Left and Text Right -->
+<section class="py-16" style="background-color: #008250;">
+    <div class="container mx-auto px-4">
+        <div class="flex flex-col lg:flex-row items-stretch gap-8 min-h-[500px]">
+            <!-- Left Side - 6 Images Gallery with Auto-Rotation -->
+            <div class="lg:w-1/2">
+                <div class="h-full">
+                    <div class="gallery-container w-full h-full rounded-lg overflow-hidden relative" style="background-color: #008250;">
+                        <!-- Completely clean background with no text at all -->
+                        <div id="gallery-fallback" class="absolute inset-0 rounded-lg" style="background-color: #008250;"></div>
+                        <img src="/ImageSlide1.avif" class="gallery-image absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 z-10 rounded-lg" alt="Service 1" style="opacity: 0;" />
+                        <img src="/ImageSlide2.avif" class="gallery-image absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 z-10 rounded-lg" alt="Service 2" style="opacity: 0;" />
+                        <img src="/ImageSlide3.avif" class="gallery-image absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 z-10 rounded-lg" alt="Service 3" style="opacity: 0;" />
+                        <img src="/ImageSlide4.avif" class="gallery-image absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 z-10 rounded-lg" alt="Service 4" style="opacity: 0;" />
+                        <img src="/ImageSlide5.avif" class="gallery-image absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 z-10 rounded-lg" alt="Service 5" style="opacity: 0;" />
+                        <img src="/ImagrSlide6avif.avif" class="gallery-image absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 z-10 rounded-lg" alt="Service 6" style="opacity: 0;" />
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side - Company Text with White Background -->
+            <div class="lg:w-1/2">
+                <div class="bg-white p-8 rounded-2xl shadow-lg h-full flex flex-col justify-center text-center lg:text-left border-2 border-gray-200">
+                    <h1 class="text-4xl lg:text-6xl font-bold text-gray-800 mb-6">
+                        THE LAB <span class="text-blue-600">TECHBOX</span>
+                    </h1>
+                    <p class="text-2xl lg:text-3xl text-gray-700 mb-8 font-semibold">
+                        Εδώ όλα επισκευάζονται
+                    </p>
+                    <p class="text-xl lg:text-2xl text-blue-600 font-bold">
+                        We Can Fix That
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section class="py-8 relative" style="background-color: #008250; background-image: url('/OurServicesBackground.avif'); background-size: cover; background-position: center; background-blend-mode: multiply;">
+    <!-- Dark overlay for better text readability -->
+    <div class="absolute inset-0 bg-black bg-opacity-30"></div>
+    <div class="container mx-auto px-4 relative z-10">
+        <!-- Services Header -->
+        <div class="text-center mb-12">
+            <h2 class="text-3xl lg:text-4xl font-bold text-white mb-6 drop-shadow-lg">Οι Υπηρεσίες μας</h2>
+        </div>
+        
+        <!-- Services Description Box -->
+        <div class="max-w-4xl mx-auto mb-16">
+            <div class="bg-black bg-opacity-30 rounded-2xl shadow-xl p-8 border-l-4 border-blue-500">
+                <p class="text-lg text-white leading-relaxed">
+                    Εργαζόμαστε υπεύθυνα για να μπορούμε να σας προσφέρουμε την καλύτερη λύση στο πρόβλημά σας, στις πιο ανταγωνιστικές τιμές της αγοράς. Η συνεχής ενημέρωσή μας, πάνω σε θέματα τεχνολογίας, μας επιτρέπει να δίνουμε τις καλύτερες προτάσεις, τόσο σε θέματα εγκαταστάσεων συστημάτων ασφαλείας όσο και σε θέματα επισκευών, αναβαθμίσεων και πωλήσεων ηλεκτρονικών ειδών.
+                </p>
+                <p class="text-lg text-white leading-relaxed mt-4">
+                    Ρίξτε μια ματιά στις υπηρεσίες μας, για να ενημερωθείτε.
+                </p>
+            </div>
+        </div>
+
+        <!-- Services Cards - Taller, No Numbers, Semi-transparent -->
+        <div class="flex flex-wrap justify-center gap-4 mb-12 overflow-x-auto">
+            <!-- Service 1 -->
+            <div class="bg-white bg-opacity-80 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 w-48 h-96 flex-shrink-0">
+                <div class="h-56 bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center">
+                    <img src="/ServiceCardImage1.avif" alt="Συστήματα Ασφαλείας" class="w-full h-full object-cover" />
+                </div>
+                <div class="p-4">
+                    <h3 class="text-sm font-semibold text-gray-800 leading-tight">Εγκαταστάσεις Συστημάτων Ασφαλείας και Συναγερμών</h3>
+                </div>
+            </div>
+
+            <!-- Service 2 -->
+            <div class="bg-white bg-opacity-80 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 w-48 h-96 flex-shrink-0">
+                <div class="h-56 bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center">
+                    <img src="/ServiceCardImage2.avif" alt="Επισκευές Κινητών" class="w-full h-full object-cover" />
+                </div>
+                <div class="p-4">
+                    <h3 class="text-sm font-semibold text-gray-800 leading-tight">Επισκευές Κινητών Τηλεφώνων - Τάμπλετ</h3>
+                </div>
+            </div>
+
+            <!-- Service 3 -->
+            <div class="bg-white bg-opacity-80 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 w-48 h-96 flex-shrink-0">
+                <div class="h-56 bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center">
+                    <img src="/ServiceCardImage3.avif" alt="Επισκευές Υπολογιστών" class="w-full h-full object-cover" />
+                </div>
+                <div class="p-4">
+                    <h3 class="text-sm font-semibold text-gray-800 leading-tight">Επισκευές - αναβαθμίσεις Ηλεκτρονικών Υπολογιστών</h3>
+                </div>
+            </div>
+
+            <!-- Service 4 -->
+            <div class="bg-white bg-opacity-80 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 w-48 h-96 flex-shrink-0">
+                <div class="h-56 bg-gradient-to-br from-red-400 to-red-600 flex items-center justify-center">
+                    <img src="/ServiceCardImage4.avif" alt="Επισκευές Τηλεοράσεων" class="w-full h-full object-cover" />
+                </div>
+                <div class="p-4">
+                    <h3 class="text-sm font-semibold text-gray-800 leading-tight">Επισκευές Τηλεοράσεων<br>Ηχοσυστημάτων</h3>
+                </div>
+            </div>
+
+            <!-- Service 5 -->
+            <div class="bg-white bg-opacity-80 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 w-48 h-96 flex-shrink-0">
+                <div class="h-56 bg-gradient-to-br from-yellow-400 to-orange-500 flex items-center justify-center">
+                    <img src="/ServiceCardImage5.avif" alt="Εμπορικό Τμήμα" class="w-full h-full object-cover" />
+                </div>
+                <div class="p-4">
+                    <h3 class="text-sm font-semibold text-gray-800 leading-tight">Εμπορικό Τμήμα</h3>
+                </div>
+            </div>
+        </div>
+
+        <!-- View More Button -->
+        <div class="text-center">
+            <a href="/services" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-full text-lg transition-colors duration-300 shadow-lg hover:shadow-xl">
+                Δείτε περισσότερα
+            </a>
+        </div>
+    </div>
+</section>
+
+<script>
+console.log('=== BULLETPROOF SLIDESHOW LOADING ===');
+
+// Global slideshow state with singleton protection
+window.slideshowState = {
+    currentIndex: 0,
+    slideInterval: null,
+    images: [],
+    isRunning: false,
+    isInitializing: false // NEW: Prevents multiple simultaneous initializations
+};
+
+// Bulletproof slideshow function with singleton protection
+function startBulletproofSlideshow() {
+    console.log('=== SLIDESHOW START REQUESTED ===');
+    
+    // SINGLETON PROTECTION: Don't start if already initializing
+    if (window.slideshowState.isInitializing) {
+        console.log('⚠️ Already initializing, skipping...');
+        return;
+    }
+    
+    // SINGLETON PROTECTION: Don't start if already running
+    if (window.slideshowState.isRunning) {
+        console.log('⚠️ Already running, stopping first...');
+        stopSlideshow();
+    }
+    
+    // Lock initialization
+    window.slideshowState.isInitializing = true;
+    console.log('🔒 Locked initialization');
+    
+    // Stop any existing slideshow completely
+    if (window.slideshowState.slideInterval) {
+        clearInterval(window.slideshowState.slideInterval);
+        window.slideshowState.slideInterval = null;
+        console.log('🛑 Cleared old interval');
+    }
+    
+    // Find images
+    const images = document.querySelectorAll('.gallery-image');
+    const fallback = document.getElementById('gallery-fallback');
+    
+    console.log('Found', images.length, 'gallery images');
+    
+    if (images.length === 0) {
+        console.log('No images found!');
+        if (fallback) {
+            fallback.style.display = 'block';
+            fallback.style.background = '#008250';
+        }
+        window.slideshowState.isInitializing = false; // Unlock
+        return;
+    }
+    
+    // Store images globally and reset state
+    window.slideshowState.images = Array.from(images);
+    window.slideshowState.currentIndex = 0;
+    
+    // Hide fallback
+    if (fallback) {
+        fallback.style.display = 'none';
+    }
+    
+    // CRITICAL: Force all images to be hidden with immediate effect
+    images.forEach((img, index) => {
+        img.style.opacity = '0';
+        img.style.transition = 'opacity 1s ease-in-out';
+        // Force browser to apply the change immediately
+        img.offsetHeight; // Trigger reflow
+        console.log('🔄 Reset image', index + 1, 'opacity to 0');
+    });
+    
+    // Wait a moment for opacity changes to apply
+    setTimeout(() => {
+        // Show first image
+        if (window.slideshowState.images[0]) {
+            window.slideshowState.images[0].style.opacity = '1';
+            console.log('✅ Showing first image');
+        }
+        
+        // Start the slideshow interval
+        window.slideshowState.slideInterval = setInterval(function() {
+            if (window.slideshowState.images.length === 0) return;
+            
+            // Hide current image
+            const currentImg = window.slideshowState.images[window.slideshowState.currentIndex];
+            if (currentImg) {
+                currentImg.style.opacity = '0';
+            }
+            
+            // Move to next image
+            window.slideshowState.currentIndex = (window.slideshowState.currentIndex + 1) % window.slideshowState.images.length;
+            
+            // Show next image
+            const nextImg = window.slideshowState.images[window.slideshowState.currentIndex];
+            if (nextImg) {
+                nextImg.style.opacity = '1';
+                console.log('➡️ Advanced to image', window.slideshowState.currentIndex + 1);
+            }
+            
+        }, 2000); // Change every 2 seconds
+        
+        window.slideshowState.isRunning = true;
+        window.slideshowState.isInitializing = false; // Unlock
+        console.log('✅ Bulletproof slideshow started successfully');
+        
+    }, 100); // Small delay to ensure opacity changes are applied
+}
+
+// Function to completely stop slideshow
+function stopSlideshow() {
+    console.log('🛑 Stopping slideshow');
+    if (window.slideshowState.slideInterval) {
+        clearInterval(window.slideshowState.slideInterval);
+        window.slideshowState.slideInterval = null;
+    }
+    window.slideshowState.isRunning = false;
+    window.slideshowState.isInitializing = false;
+}
+
+// Safe initialization with debouncing
+let initTimeout = null;
+function safeInitSlideshow() {
+    // Clear any pending initialization
+    if (initTimeout) {
+        clearTimeout(initTimeout);
+    }
+    
+    // Debounce: Only start after 200ms of no new requests
+    initTimeout = setTimeout(() => {
+        console.log('=== SAFE INIT SLIDESHOW ===');
+        startBulletproofSlideshow();
+    }, 200);
+}
+
+// Single initialization point
+function initSlideshow() {
+    console.log('=== INIT SLIDESHOW CALLED ===');
+    safeInitSlideshow();
+}
+
+// Method 1: DOM Content Loaded
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('=== DOM LOADED - REQUESTING SLIDESHOW ===');
+    initSlideshow();
+});
+
+// Method 2: Window Load
+window.addEventListener('load', function() {
+    console.log('=== WINDOW LOADED - REQUESTING SLIDESHOW ===');
+    initSlideshow();
+});
+
+// Method 3: Immediate if DOM ready
+if (document.readyState === 'complete' || document.readyState === 'interactive') {
+    console.log('=== DOM ALREADY READY - REQUESTING SLIDESHOW ===');
+    initSlideshow();
+}
+
+// Method 4: Single fallback timer (reduced from multiple)
+setTimeout(function() {
+    console.log('=== FALLBACK TIMER - REQUESTING SLIDESHOW ===');
+    initSlideshow();
+}, 1000);
+
+// Method 5: Page visibility change (with debouncing)
+document.addEventListener('visibilitychange', function() {
+    if (!document.hidden) {
+        console.log('=== PAGE VISIBLE - REQUESTING SLIDESHOW ===');
+        initSlideshow();
+    }
+});
+
+// Method 6: Window focus (with debouncing)
+window.addEventListener('focus', function() {
+    console.log('=== WINDOW FOCUS - REQUESTING SLIDESHOW ===');
+    initSlideshow();
+});
+
+// Method 7: Blazor navigation detection
+let lastUrl = location.href;
+new MutationObserver(() => {
+    const currentUrl = location.href;
+    if (currentUrl !== lastUrl) {
+        lastUrl = currentUrl;
+        if (currentUrl.includes('localhost:5242') && !currentUrl.includes('/about') && !currentUrl.includes('/services')) {
+            console.log('=== BLAZOR NAVIGATION TO HOME - REQUESTING SLIDESHOW ===');
+            setTimeout(initSlideshow, 500);
+        }
+    }
+}).observe(document, { subtree: true, childList: true });
+
+// Method 8: Hash change detection (for single page apps)
+window.addEventListener('hashchange', function() {
+    console.log('=== HASH CHANGE - REQUESTING SLIDESHOW ===');
+    setTimeout(initSlideshow, 300);
+});
+
+// Method 9: PopState detection (browser back/forward)
+window.addEventListener('popstate', function() {
+    console.log('=== POP STATE - REQUESTING SLIDESHOW ===');
+    setTimeout(initSlideshow, 400);
+});
+
+// Global functions for manual control
+window.restartSlideshow = function() {
+    console.log('=== MANUAL RESTART REQUESTED ===');
+    stopSlideshow();
+    setTimeout(initSlideshow, 100);
+};
+
+window.stopSlideshow = stopSlideshow;
+
+console.log('=== BULLETPROOF SLIDESHOW SCRIPT LOADED ===');
+</script>
+
+@code {
+    private bool _hasRendered = false;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        try
+        {
+            if (firstRender)
+            {
+                Console.WriteLine("Blazor: First render - Starting slideshow");
+                // Force slideshow initialization on first render
+                await JSRuntime.InvokeVoidAsync("eval", "if(typeof window.restartSlideshow === 'function') { console.log('Blazor: Calling restartSlideshow'); window.restartSlideshow(); }");
+                _hasRendered = true;
+            }
+            else if (_hasRendered)
+            {
+                Console.WriteLine("Blazor: Subsequent render - Restarting slideshow");
+                // Also restart on subsequent renders (navigation back)
+                await Task.Delay(100); // Small delay to ensure DOM is ready
+                await JSRuntime.InvokeVoidAsync("eval", "if(typeof window.restartSlideshow === 'function') { console.log('Blazor: Re-calling restartSlideshow'); window.restartSlideshow(); }");
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Blazor: Error in OnAfterRenderAsync: {ex.Message}");
+            // Fallback: try direct JavaScript call
+            try
+            {
+                await JSRuntime.InvokeVoidAsync("eval", "setTimeout(function() { if(typeof window.restartSlideshow === 'function') { window.restartSlideshow(); } }, 500);");
+            }
+            catch (Exception fallbackEx)
+            {
+                Console.WriteLine($"Blazor: Fallback also failed: {fallbackEx.Message}");
+            }
+        }
+    }
+    
+    protected override void OnInitialized()
+    {
+        Console.WriteLine("Blazor: Home component initialized");
+    }
+
+    protected override async Task OnParametersSetAsync()
+    {
+        Console.WriteLine("Blazor: Parameters set - ensuring slideshow restart");
+        if (_hasRendered)
+        {
+            try
+            {
+                await Task.Delay(200);
+                await JSRuntime.InvokeVoidAsync("eval", "if(typeof window.restartSlideshow === 'function') { window.restartSlideshow(); }");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Blazor: Error in OnParametersSetAsync: {ex.Message}");
+            }
+        }
+    }
+    
+    public void Dispose()
+    {
+        Console.WriteLine("Blazor: Home component disposed");
+        try
+        {
+            // Stop slideshow when component is disposed
+            JSRuntime.InvokeVoidAsync("eval", "if(typeof window.stopSlideshow === 'function') { window.stopSlideshow(); }");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Blazor: Error disposing: {ex.Message}");
+        }
+    }
+}
