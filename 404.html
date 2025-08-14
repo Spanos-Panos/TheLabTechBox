@@ -34,6 +34,17 @@
     </div>
     
     <script src="_framework/blazor.webassembly.js"></script>
+    <script>
+        // Enable better error reporting for GitHub Pages
+        window.addEventListener('error', function(e) {
+            console.error('Global error:', e.error);
+        });
+        
+        window.addEventListener('unhandledrejection', function(e) {
+            console.error('Unhandled promise rejection:', e.reason);
+        });
+    </script>
 </body>
 
 </html>
+

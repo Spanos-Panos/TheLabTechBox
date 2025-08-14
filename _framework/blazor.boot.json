@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "TheLab-TechBox",
   "resources": {
-    "hash": "sha256-xtghMgPnQ4PuYd/hr2/byXhStN2d3DJfpDIUELdERH8=",
+    "hash": "sha256-6etdtEuUu8Si5szbbHTtsnrzDaNGTrlOJCjKM97avng=",
     "fingerprinting": {
       "Microsoft.AspNetCore.Components.9xztfcdisi.wasm": "Microsoft.AspNetCore.Components.wasm",
       "Microsoft.AspNetCore.Components.Web.tx885whulx.wasm": "Microsoft.AspNetCore.Components.Web.wasm",
@@ -34,7 +34,7 @@
       "System.Text.Encodings.Web.fuuvru2gdb.wasm": "System.Text.Encodings.Web.wasm",
       "System.Text.Json.1s1tdbqiv2.wasm": "System.Text.Json.wasm",
       "System.Text.RegularExpressions.4wce9rs2sh.wasm": "System.Text.RegularExpressions.wasm",
-      "TheLab-TechBox.36shtnq7am.wasm": "TheLab-TechBox.wasm",
+      "TheLab-TechBox.vrp8hzllgt.wasm": "TheLab-TechBox.wasm",
       "dotnet.js": "dotnet.js",
       "dotnet.native.8o8n7iomrf.js": "dotnet.native.js",
       "dotnet.native.aep4lch3d1.wasm": "dotnet.native.wasm",
@@ -91,7 +91,7 @@
       "System.Text.Encodings.Web.fuuvru2gdb.wasm": "sha256-5wDVy6v7J/km28awj5SoGUUqj0+8D4fygioJErU/1DI=",
       "System.Text.Json.1s1tdbqiv2.wasm": "sha256-QQdmD4eb/+EpkbyqJix7hKOVbme/TzinH7BZd0o/IBU=",
       "System.Text.RegularExpressions.4wce9rs2sh.wasm": "sha256-PJKtyTv3s1zT5AwxsiYM/hQq+4ks0Jg2mZl/fJRcSbg=",
-      "TheLab-TechBox.36shtnq7am.wasm": "sha256-2wEGuHaMf6VFoYUl3Sb3JqndLUvNItTjOvVh5h8kb6Y="
+      "TheLab-TechBox.vrp8hzllgt.wasm": "sha256-hR72wDp54CesJhbYEIH5J7a5RrFpVhUAuVvWuE5QTzc="
     }
   },
   "cacheBootResources": true,
